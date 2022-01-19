@@ -10,25 +10,21 @@
       <h1>Spacestagram</h1>
     </header>
 
-  <section>
-    <div id="sideSearch">
-      <form>
-        <div id="searchArea">
-          <label for="citySearch">Search for a City</label>
-          <input
-            type="text"
-            class="cityQuery"
-            id="citySearch"
-            placeholder="Enter City"
-          />
-          <button type="button" id="searchBtn" value="Search">Search</button>
-        </div>
-      </form>
+    <section>
+      <div id="dateSearch">
+        <form>
+          <label for="startDate">Start Date:</label>
+          <input type="date" id="startDate" name="startDate" />
+          <label for="endDate">End Date:</label>
+          <input type="date" id="endDate" name="endDate" />
+          <input type="submit" id="searchBtn" value="Submit" />
+        </form>
+      </div>
       <section id="allImages"></section>
       <!-- <h2 id="title"></h2>
       <p id="date"></p>
       <img src="" id="image" alt="" /> -->
-  </section>
+    </section>
 
     <script src="./script.js"></script>
   </body>
