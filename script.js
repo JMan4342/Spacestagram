@@ -34,35 +34,41 @@ function displayData(data) {
   let allImage = [];
   for (let i of data) {
     if (i.media_type === "video") {
-      allImage += `<div id="imgDesc">
-        <h2>${i.title}</h2>
-        <p>${i.date}</p>
-        <iframe width="420" height="345" src="${i.url}">Video Not Available</iframe>
-        <button type="button" class="btnClass" id="likeBtn"  >Like</button>
-        </div>`;
-    } else {
-      allImage += `<div id="imgDesc">
+      allImage.push(
+        `<div id="imgDesc">
             <h2>${i.title}</h2>
             <p>${i.date}</p>
-            <img src="${i.url}" alt="${i.explanation}"/>
+            <iframe width="420" height="345" src="${i.url}">Video Not Available</iframe>
             <button type="button" class="btnClass" id="likeBtn"  >Like</button>
-            </div>`;
+            </div>`
+      );
+    } else {
+      allImage.push(
+        `<div id="imgDesc">
+                <h2>${i.title}</h2>
+                <p>${i.date}</p>
+                <img src="${i.url}" alt="${i.explanation}"/>
+                <button type="button" class="btnClass" id="likeBtn"  >Like</button>
+                </div>`
+      );
     }
   }
-  document.getElementById("allImages").innerHTML = allImage;
 
-    document.querySelectorAll(".btnClass").forEach((item) => {
-      item.addEventListener("click", (event) => {
-        //handle click
-        event.preventDefault();
+  document.getElementById("allImages").innerHTML = allImage.join("");
+
+  console.log(allImage);
+
+  document.querySelectorAll(".btnClass").forEach((item) => {
+    item.addEventListener("click", (event) => {
+      //handle click
+      event.preventDefault();
         if (document.querySelector(".btnClass").innerHTML === "Like") {
           document.querySelector(".btnClass").innerHTML = "Unlike";
         } else {
           document.querySelector(".btnClass").innerHTML = "Like";
         }
-      });
     });
-
+  });
 }
 
 // document.querySelectorAll(".btnClass").forEach((item) => {
