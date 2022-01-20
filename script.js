@@ -31,43 +31,62 @@ function getNasaData(event) {
 // getNasaData(api_url);
 
 function displayData(data) {
-  //   const { title } = data[0].title;
-  //   const { date } = data[0].date;
-  //   const { image } = data[0].url;
-
-  //   console.log({ title });
-  //   console.log({ date });
-  //   console.log({ image });
-  //   for (let i = 0; i < data.length; i++){
-  //       document.getElementById("title").textContent = data[i].title;
-  //       document.getElementById("date").textContent = data[i].date;
-
-  //   }
-  //   document.getElementById("image").src = data.map(data => data.url);
-
-  //   <img src="${i.thumbnail_url}" alt="${i.explanation}"/>
-
   let allImage = [];
   for (let i of data) {
     if (i.media_type === "video") {
-      allImage += `<div>
+      allImage += `<div id="imgDesc">
         <h2>${i.title}</h2>
         <p>${i.date}</p>
         <iframe width="420" height="345" src="${i.url}">Video Not Available</iframe>
-        <button type="button" id="likeBtn" onclick="clickLike()">Like</button>
+        <button type="button" class="btnClass" id="likeBtn"  >Like</button>
         </div>`;
     } else {
-      allImage += `<div>
+      allImage += `<div id="imgDesc">
             <h2>${i.title}</h2>
             <p>${i.date}</p>
             <img src="${i.url}" alt="${i.explanation}"/>
-            <button type="button" id="likeBtn" onclick="clickLike()">Like</button>
+            <button type="button" class="btnClass" id="likeBtn"  >Like</button>
             </div>`;
     }
   }
   document.getElementById("allImages").innerHTML = allImage;
+
+    document.querySelectorAll(".btnClass").forEach((item) => {
+      item.addEventListener("click", (event) => {
+        //handle click
+        event.preventDefault();
+        if (document.querySelector(".btnClass").innerHTML === "Like") {
+          document.querySelector(".btnClass").innerHTML = "Unlike";
+        } else {
+          document.querySelector(".btnClass").innerHTML = "Like";
+        }
+      });
+    });
+
 }
 
-function clickLike() {
-  document.getElementById("likeBtn").innerText = "Unlike";
-}
+// document.querySelectorAll(".btnClass").forEach((item) => {
+//   item.addEventListener("click", (event) => {
+// if (document.querySelector(".btnClass").innerText === "Like") {
+//   document.querySelector(".btnClass").innerText = "Unlike";
+// } else {
+//   document.querySelector(".btnClass").innerText = "Like";
+// }
+//   });
+// });
+
+//  function clickLike() {
+// if (document.querySelector(".btnClass").innerText === "Like") {
+//     document.querySelector(".btnClass").innerText = "Unlike";
+//   } else {
+//     document.querySelector(".btnClass").innerText = "Like";
+//   }
+
+//  function clickLike() {
+// if (document.querySelector(".btnClass").innerText === "Like") {
+//     document.querySelector(".btnClass").innerText = "Unlike";
+//   } else {
+//     document.querySelector(".btnClass").innerText = "Like";
+//   }
+
+// }

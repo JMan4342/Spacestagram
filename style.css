@@ -1,0 +1,32 @@
+#btnControl {
+  display: none;
+}
+.btn {
+  width: 80px;
+  height: 30px;
+  background: #ffffff;
+  border-radius: 7px;
+  padding: 1px 3px;
+  box-shadow: 1px 1px 1px #000000;
+  display: block;
+  text-align: center;
+  background-image: linear-gradient(to bottom, #e8e8e8, #a1a1a1);
+  font-family: arial;
+  font-size: 14px;
+  line-height: 30px;
+}
+.btn:hover {
+  background-image: linear-gradient(to bottom, #97e8ae, #3be36b);
+}
+.btn:active {
+  margin-left: 1px 1px 0;
+  box-shadow: -1px -1px 1px #000;
+  outline: 1px solid #000000;
+  -moz-outline-radius: 7px;
+  background-image: linear-gradient(to top, #97e8ae, #3be36b);
+}
+#btnControl:checked + label {
+  width: 70px;
+  height: 74px;
+  line-height: 74px;
+}
