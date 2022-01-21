@@ -32,26 +32,29 @@ function getNasaData(event) {
 
 function displayData(data) {
   let allImage = [];
-  for (let i of data) {
-    if (i.media_type === "video") {
-      allImage.push(
-        `<div id="imgDesc">
-            <h2>${i.title}</h2>
-            <p>${i.date}</p>
-            <iframe width="420" height="345" src="${i.url}">Video Not Available</iframe>
-            <button type="button" class="btnClass" id="likeBtn"  >Like</button>
-            </div>`
-      );
-    } else {
-      allImage.push(
-        `<div id="imgDesc">
-                <h2>${i.title}</h2>
-                <p>${i.date}</p>
-                <img src="${i.url}" alt="${i.explanation}"/>
-                <button type="button" class="btnClass" id="likeBtn"  >Like</button>
-                </div>`
-      );
-    }
+  for (let i = 0; i < data.length; i++) {
+    //   for (let obj of data) {
+
+          if (data[i].media_type === "video") {
+            allImage.push(
+              `<div id="imgDesc">
+                  <h2>${data[i].title}</h2>
+                  <p>${data[i].date}</p>
+                  <iframe width="420" height="345" src="${data[i].url}">Video Not Available</iframe>
+                  <button type="button" class="btnClass" id="likeBtn` + [i] + `"  >Like</button>
+                  </div>`
+            );
+          } else {
+            allImage.push(
+              `<div id="imgDesc">
+                      <h2>${data[i].title}</h2>
+                      <p>${data[i].date}</p>
+                      <img src="${data[i].url}" alt="${data[i].explanation}"/>
+                      <button type="button" class="btnClass" id="likeBtn` + [i] + `"  >Like</button>
+                      </div>`
+            );
+        //   }
+      }
   }
 
   document.getElementById("allImages").innerHTML = allImage.join("");
