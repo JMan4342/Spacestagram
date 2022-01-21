@@ -35,44 +35,48 @@ function displayData(data) {
   for (let i = 0; i < data.length; i++) {
     //   for (let obj of data) {
 
-          if (data[i].media_type === "video") {
-            allImage.push(
-              `<div id="imgDesc">
+    if (data[i].media_type === "video") {
+      allImage.push(
+        `<div id="imgDesc">
                   <h2>${data[i].title}</h2>
                   <p>${data[i].date}</p>
                   <iframe width="420" height="345" src="${data[i].url}">Video Not Available</iframe>
-                  <button type="button" class="btnClass" id="likeBtn` + [i] + `"  >Like</button>
+                  <button type="button" class="btnClass" id="likeBtn` +
+          [i] +
+          `"  onClick=clickLike() >Like</button>
                   </div>`
-            );
-          } else {
-            allImage.push(
-              `<div id="imgDesc">
+      );
+    } else {
+      allImage.push(
+        `<div id="imgDesc">
                       <h2>${data[i].title}</h2>
                       <p>${data[i].date}</p>
                       <img src="${data[i].url}" alt="${data[i].explanation}"/>
-                      <button type="button" class="btnClass" id="likeBtn` + [i] + `"  >Like</button>
+                      <button type="button" class="btnClass" id="likeBtn` +
+          [i] +
+          `"  onClick=clickLike() >Like</button>
                       </div>`
-            );
-        //   }
-      }
+      );
+    }
   }
 
   document.getElementById("allImages").innerHTML = allImage.join("");
 
   console.log(allImage);
-
-  document.querySelectorAll(".btnClass").forEach((item) => {
-    item.addEventListener("click", (event) => {
-      //handle click
-      event.preventDefault();
-        if (document.querySelector(".btnClass").innerHTML === "Like") {
-          document.querySelector(".btnClass").innerHTML = "Unlike";
-        } else {
-          document.querySelector(".btnClass").innerHTML = "Like";
-        }
-    });
-  });
 }
+
+// document.querySelectorAll(".btnClass").forEach((item) => {
+//   item.addEventListener("click", (event) => {
+//     //handle click
+//     // event.preventDefault();
+//     console.log("HELLO!!!");
+//     if (document.querySelector("#likeBtn" + [i]).innerHTML === "Like") {
+//       document.querySelector("#likeBtn" + [i]).innerHTML = "Unlike";
+//     } else {
+//       document.querySelector("#likeBtn" + [i]).innerHTML = "Like";
+//     }
+//   });
+// });
 
 // document.querySelectorAll(".btnClass").forEach((item) => {
 //   item.addEventListener("click", (event) => {
@@ -84,18 +88,16 @@ function displayData(data) {
 //   });
 // });
 
-//  function clickLike() {
-// if (document.querySelector(".btnClass").innerText === "Like") {
-//     document.querySelector(".btnClass").innerText = "Unlike";
-//   } else {
-//     document.querySelector(".btnClass").innerText = "Like";
-//   }
+// document.querySelectorAll(".btnClass").addEventListener("click", clickLike);
 
-//  function clickLike() {
-// if (document.querySelector(".btnClass").innerText === "Like") {
-//     document.querySelector(".btnClass").innerText = "Unlike";
-//   } else {
-//     document.querySelector(".btnClass").innerText = "Like";
-//   }
-
-// }
+function clickLike() {
+  let btnArr = document.querySelectorAll(".btnClass");
+  console.log({ btnArr });
+  for (let i = 0; i < btnArr.length; i++) {
+    if (document.querySelector("#likeBtn" + [i]).innerText === "Like") {
+      document.querySelector("#likeBtn" + [i]).innerText = "Unlike";
+    } else {
+      document.querySelector("#likeBtn" + [i]).innerText = "Like";
+    }
+  }
+}
