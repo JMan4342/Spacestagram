@@ -43,7 +43,7 @@ function displayData(data) {
                   <iframe width="420" height="345" src="${data[i].url}">Video Not Available</iframe>
                   <button type="button" class="btnClass" id="likeBtn` +
           [i] +
-          `"  onClick=clickLike() >Like</button>
+          `"  >Like</button>
                   </div>`
       );
     } else {
@@ -54,15 +54,37 @@ function displayData(data) {
                       <img src="${data[i].url}" alt="${data[i].explanation}"/>
                       <button type="button" class="btnClass" id="likeBtn` +
           [i] +
-          `"  onClick=clickLike() >Like</button>
+          `"  >Like</button>
                       </div>`
       );
     }
   }
 
-  document.getElementById("allImages").innerHTML = allImage.join("");
+  document.querySelector(".allImages").innerHTML = allImage.join("");
 
-  console.log(allImage);
+    for (let j = 0; j < allImage.length; j++) {
+      document
+        .querySelector("#likeBtn" + [j])
+        .addEventListener(`click`, (event) => {
+          if (document.querySelector("#likeBtn" + [j]).innerText === "Like") {
+            document.querySelector("#likeBtn" + [j]).innerText = "Unlike";
+          } else {
+            document.querySelector("#likeBtn" + [j]).innerText = "Like";
+          }
+        });
+    }
+
+  // document.querySelectorAll('button').forEach(element => {
+  //   element.addEventListener('click', () => {
+  //     if (document.querySelector(".btnClass").innerText === "Like") {
+  //       document.querySelector(".btnClass").innerText = "Unlike";
+  //     } else {
+  //       document.querySelector(".btnClass").innerText = "Like";
+  //     }
+  //   })
+  // })
+  
+  console.log({ allImage });
 }
 
 // document.querySelectorAll(".btnClass").forEach((item) => {
@@ -90,14 +112,25 @@ function displayData(data) {
 
 // document.querySelectorAll(".btnClass").addEventListener("click", clickLike);
 
-function clickLike() {
-  let btnArr = document.querySelectorAll(".btnClass");
-  console.log({ btnArr });
-  for (let i = 0; i < btnArr.length; i++) {
-    if (document.querySelector("#likeBtn" + [i]).innerText === "Like") {
-      document.querySelector("#likeBtn" + [i]).innerText = "Unlike";
-    } else {
-      document.querySelector("#likeBtn" + [i]).innerText = "Like";
-    }
-  }
-}
+// function clickLike() {
+//   let btnArr = document.querySelectorAll(".btnClass");
+//   console.log({ btnArr });
+//   for (let i = 0; i < btnArr.length; i++) {
+//     if (document.querySelector("#likeBtn" + [i]).innerText === "Like") {
+//       document.querySelector("#likeBtn" + [i]).innerText = "Unlike";
+//     } else {
+//       document.querySelector("#likeBtn" + [i]).innerText = "Like";
+//     }
+//   }
+// }
+
+// let btnArr = document.getElementsByClassName("btnClass");
+// for (let i = 0; i < btnArr.length; i++) {
+//   btnArr.addEventListener("click", (event) => {
+//     if (document.querySelector(".btnClass").innerText === "Like") {
+//       document.querySelector(".btnClass").innerText = "Unlike";
+//     } else {
+//       document.querySelector(".btnClass").innerText = "Like";
+//     }
+//   });
+// }
