@@ -3,6 +3,8 @@
 
 var API_KEY = "hAqRzYzMAFDKEnVTacuBgxtTayZqHDvb5UqazeiX";
 
+let likeImgArr = JSON.parse(localStorage.getItem("likedImg")) || [];
+
 document.querySelector("#searchBtn").addEventListener("click", getNasaData);
 
 function getNasaData(event) {
@@ -62,17 +64,19 @@ function displayData(data) {
 
   document.querySelector(".allImages").innerHTML = allImage.join("");
 
-    for (let j = 0; j < allImage.length; j++) {
-      document
-        .querySelector("#likeBtn" + [j])
-        .addEventListener(`click`, (event) => {
-          if (document.querySelector("#likeBtn" + [j]).innerText === "Like") {
-            document.querySelector("#likeBtn" + [j]).innerText = "Unlike";
-          } else {
-            document.querySelector("#likeBtn" + [j]).innerText = "Like";
-          }
-        });
-    }
+  for (let j = 0; j < allImage.length; j++) {
+    document
+      .querySelector("#likeBtn" + [j])
+      .addEventListener(`click`, (event) => {
+        if (document.querySelector("#likeBtn" + [j]).innerText === "Like") {
+          document.querySelector("#likeBtn" + [j]).innerText = "Unlike";
+          if (!likeImgArr.includes(data[j].date)) likeImgArr.push(data[j].date);
+          localStorage.setItem("likedImg", JSON.stringify(likeImgArr));
+        } else {
+          document.querySelector("#likeBtn" + [j]).innerText = "Like";
+        }
+      });
+  }
 
   // document.querySelectorAll('button').forEach(element => {
   //   element.addEventListener('click', () => {
@@ -83,7 +87,7 @@ function displayData(data) {
   //     }
   //   })
   // })
-  
+
   console.log({ allImage });
 }
 
