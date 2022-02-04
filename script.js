@@ -3,7 +3,7 @@
 
 var API_KEY = "hAqRzYzMAFDKEnVTacuBgxtTayZqHDvb5UqazeiX";
 
-let likeImgArr = JSON.parse(localStorage.getItem("likedImg")) || [];
+let likeImgArr = JSON.parse(localStorage.getItem("likeImgArr")) || [];
 
 document.querySelector("#searchBtn").addEventListener("click", getNasaData);
 
@@ -71,11 +71,14 @@ function displayData(data) {
         if (document.querySelector("#likeBtn" + [j]).innerText === "Like") {
           document.querySelector("#likeBtn" + [j]).innerText = "Unlike";
           if (!likeImgArr.includes(data[j].date)) likeImgArr.push(data[j].date);
-          localStorage.setItem("likedImg", JSON.stringify(likeImgArr));
+          localStorage.setItem("likeImgArr", JSON.stringify(likeImgArr));
         } else {
           document.querySelector("#likeBtn" + [j]).innerText = "Like";
+          if (likeImgArr.includes(data[j].date)) likeImgArr.splice(likeImgArr.indexOf(data[j].date), 1);
+          localStorage.setItem("likeImgArr", JSON.stringify(likeImgArr));
         }
       });
+      console.log({likeImgArr})
   }
 
   // document.querySelectorAll('button').forEach(element => {
