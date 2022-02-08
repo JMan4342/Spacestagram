@@ -30,8 +30,6 @@ function getNasaData(event) {
     });
 }
 
-// getNasaData(api_url);
-
 function displayData(data) {
   let allImage = [];
   for (let i = 0; i < data.length; i++) {
