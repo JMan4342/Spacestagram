@@ -95,7 +95,7 @@ function displayData(data) {
         if (document.querySelector("#likeBtn" + [j]).innerText === "Like") {
           document.querySelector("#likeBtn" + [j]).innerText = "Unlike";
           if (!likeImgArr.includes(data[j].date)) likeImgArr.push(data[j].date);
-          localStorage.setItem("likeImgArr", JSON.stringify(likeImgArr));
+          localStorage.setItem("likeImgArr", JSON.stringify(likeImgArr.sort()));
         } else {
           document.querySelector("#likeBtn" + [j]).innerText = "Like";
           if (likeImgArr.includes(data[j].date))
