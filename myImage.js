@@ -4,13 +4,18 @@
 var API_KEY = "hAqRzYzMAFDKEnVTacuBgxtTayZqHDvb5UqazeiX";
 
 let likeImgArr = JSON.parse(localStorage.getItem("likeImgArr")) || [];
+console.log({ likeImgArr });
 
 // Render saved images from local storage
-function getFavData() {
-  for (let i = 0; i = likeImgArr.length; i++) {
+window.onload = function getFavData() {
+  let favImages = [];
 
-    const api_url = `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&concept_tags=True&thumbs=True&start_date=${likeImgArr[i]}`;
-    console.log("API url", api_url);
+  for (i = 0; i < likeImgArr.length; i++) {
+    const api_url =
+      `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&concept_tags=True&thumbs=True&date=` +
+      likeImgArr[i];
+    console.log({ api_url });
+    // console.log("API url", api_url);
     // const response = await fetch(url);
     // var data = await response.json();
     // if (response) {
@@ -25,37 +30,32 @@ function getFavData() {
         console.log({ data });
         displayFavImg(data);
       });
-  }
-}
-
-
-function displayFavImg(data) {
-  let favImages = [];
-  for (let i = 0; i < data.length; i++){
-    if (data[i].media_type === "video") {
-      favImages.push(
-        `<div id="imgDesc">
-              <h2>${data[i].title}</h2>
-              <p>${data[i].date}</p>
-              <iframe width="420" height="345" src="${data[i].url}">Video Not Available</iframe>
-              <button type="button" class="btnClass" id="likeBtn` +
-          [i] +
-          `"  >Unlike</button>
-              </div>`
-      );
-    } else {
-      favImages.push(
-        `<div id="imgDesc">
-                  <h2>${data[i].title}</h2>
-                  <p>${data[i].date}</p>
-                  <img src="${data[i].url}" alt="${data[i].explanation}"/>
-                  <button type="button" class="btnClass" id="likeBtn` +
-          [i] +
-          `"  >Unlike</button>
+      function displayFavImg(data) {
+        // for (let i = 0; i < data.length; i++) {
+          if (data.media_type === "video") {
+            favImages.push(
+              `<div id="imgDesc">
+                  <h2>${data.title}</h2>
+                  <p>${data.date}</p>
+                  <iframe width="420" height="345" src="${data.url}">Video Not Available</iframe>
+                  <button type="button" class="btnClass" id="likeBtn"  >Unlike</button>
                   </div>`
-      );
-    }
+            );
+          } else {
+            favImages.push(
+              `<div id="imgDesc">
+                      <h2>${data.title}</h2>
+                      <p>${data.date}</p>
+                      <img src="${data.url}" alt="${data.explanation}"/>
+                      <button type="button" class="btnClass" id="likeBtn"  >Unlike</button>
+                      </div>`
+            );
+          }
+        // }
+        console.log({ favImages });
+        document.querySelector(".myFavImages").innerHTML = favImages.join("");
+      }
   }
-  document.querySelector(".myFavImages").innerHTML = favImages.join("");
 
-}
+};
+
