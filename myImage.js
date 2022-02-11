@@ -30,32 +30,30 @@ window.onload = function getFavData() {
         console.log({ data });
         displayFavImg(data);
       });
-      function displayFavImg(data) {
-        // for (let i = 0; i < data.length; i++) {
-          if (data.media_type === "video") {
-            favImages.push(
-              `<div id="imgDesc">
-                  <h2>${data.title}</h2>
-                  <p>${data.date}</p>
-                  <iframe width="420" height="345" src="${data.url}">Video Not Available</iframe>
-                  <button type="button" class="btnClass" id="likeBtn"  >Unlike</button>
-                  </div>`
-            );
-          } else {
-            favImages.push(
-              `<div id="imgDesc">
-                      <h2>${data.title}</h2>
-                      <p>${data.date}</p>
-                      <img src="${data.url}" alt="${data.explanation}"/>
-                      <button type="button" class="btnClass" id="likeBtn"  >Unlike</button>
-                      </div>`
-            );
-          }
-        // }
-        console.log({ favImages });
-        document.querySelector(".myFavImages").innerHTML = favImages.join("");
-      }
+    function displayFavImg(data) {
+      // for (let i = 0; i < data.length; i++) {
+        if (data.media_type === "video") {
+          favImages.push(
+            `<div id="imgDesc">
+                    <h2>${data.title}</h2>
+                    <p>${data.date}</p>
+                    <iframe width="420" height="345" src="${data.url}">Video Not Available</iframe>
+                    <button type="button" class="btnClass" id="likeBtn"  >Unlike</button>
+                    </div>`
+          );
+        } else {
+          favImages.push(
+            `<div id="imgDesc">
+                        <h2>${data.title}</h2>
+                        <p>${data.date}</p>
+                        <img src="${data.url}" alt="${data.explanation}"/>
+                        <button type="button" class="btnClass" id="likeBtn"  >Unlike</button>
+                        </div>`
+          );
+        }
+      // }
+      console.log({ favImages });
+      document.querySelector(".myFavImages").innerHTML = favImages.join("");
+    }
   }
-
 };
-
