@@ -10,10 +10,10 @@ window.onload = async function getFavData() {
   const likeImgArr =
     (await JSON.parse(localStorage.getItem("likeImgArr"))) || [];
   console.log({ likeImgArr });
-  for (const likeImg of likeImgArr) {
+  for (let i = 0; i < likeImgArr.length; i++) {
     const api_url =
       `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&concept_tags=True&thumbs=True&date=` +
-      likeImg;
+      likeImgArr[i];
     console.log({ api_url });
     // console.log("API url", api_url);
     // const response = await fetch(url);
@@ -38,7 +38,9 @@ window.onload = async function getFavData() {
                     <h2>${data.title}</h2>
                     <p>${data.date}</p>
                     <iframe width="420" height="345" src="${data.url}">Video Not Available</iframe>
-                    <button type="button" class="btnClass" id="likeBtn"  >Unlike</button>
+                    <button type="button" class="btnClass" id="likeBtn` +
+            [i] +
+            `"  >Unlike</button>
                     </div>`
         );
       } else {
@@ -47,7 +49,9 @@ window.onload = async function getFavData() {
                         <h2>${data.title}</h2>
                         <p>${data.date}</p>
                         <img src="${data.url}" alt="${data.explanation}"/>
-                        <button type="button" class="btnClass" id="likeBtn"  >Unlike</button>
+                        <button type="button" class="btnClass" id="likeBtn` +
+            [i] +
+            `"  >Unlike</button>
                         </div>`
         );
       }
