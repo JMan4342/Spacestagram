@@ -30,6 +30,7 @@ window.onload = async function getFavData() {
         console.log({ data });
         displayFavImg(data);
       });
+
     function displayFavImg(data) {
       // for (let i = 0; i < data.length; i++) {
       if (data.media_type === "video") {
@@ -60,13 +61,18 @@ window.onload = async function getFavData() {
       document.querySelector(".myFavImages").innerHTML = favImages.join("");
 
       for (let j = 0; j < favImages.length; j++) {
+        console.log("hello", data.date);
         document
           .querySelector("#likeBtn" + [j])
           .addEventListener(`click`, (event) => {
             if (document.querySelector("#likeBtn" + [j]).innerText === "Like") {
               document.querySelector("#likeBtn" + [j]).innerText = "Unlike";
-              if (!likeImgArr.includes(data[j].date)) likeImgArr.push(data[j].date);
-              localStorage.setItem("likeImgArr", JSON.stringify(likeImgArr.sort()));
+              if (!likeImgArr.includes(data[j].date))
+                likeImgArr.push(data[j].date);
+              localStorage.setItem(
+                "likeImgArr",
+                JSON.stringify(likeImgArr.sort())
+              );
             } else {
               document.querySelector("#likeBtn" + [j]).innerText = "Like";
               if (likeImgArr.includes(data[j].date))
@@ -76,7 +82,6 @@ window.onload = async function getFavData() {
           });
         console.log({ likeImgArr });
       }
-    
     }
   }
 };
