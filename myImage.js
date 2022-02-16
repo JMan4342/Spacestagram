@@ -58,6 +58,25 @@ window.onload = async function getFavData() {
       // }
       console.log({ favImages });
       document.querySelector(".myFavImages").innerHTML = favImages.join("");
+
+      for (let j = 0; j < favImages.length; j++) {
+        document
+          .querySelector("#likeBtn" + [j])
+          .addEventListener(`click`, (event) => {
+            if (document.querySelector("#likeBtn" + [j]).innerText === "Like") {
+              document.querySelector("#likeBtn" + [j]).innerText = "Unlike";
+              if (!likeImgArr.includes(data[j].date)) likeImgArr.push(data[j].date);
+              localStorage.setItem("likeImgArr", JSON.stringify(likeImgArr.sort()));
+            } else {
+              document.querySelector("#likeBtn" + [j]).innerText = "Like";
+              if (likeImgArr.includes(data[j].date))
+                likeImgArr.splice(likeImgArr.indexOf(data[j].date), 1);
+              localStorage.setItem("likeImgArr", JSON.stringify(likeImgArr));
+            }
+          });
+        console.log({ likeImgArr });
+      }
+    
     }
   }
 };
