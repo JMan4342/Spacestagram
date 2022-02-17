@@ -3,13 +3,14 @@
 
 var API_KEY = "hAqRzYzMAFDKEnVTacuBgxtTayZqHDvb5UqazeiX";
 
-let favImages = [];
-
 // Render saved images from local storage
 window.onload = async function getFavData() {
   const likeImgArr =
     (await JSON.parse(localStorage.getItem("likeImgArr"))) || [];
   console.log({ likeImgArr });
+
+  let favImages = [];
+
   for (let i = 0; i < likeImgArr.length; i++) {
     const api_url =
       `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&concept_tags=True&thumbs=True&date=` +
@@ -30,6 +31,7 @@ window.onload = async function getFavData() {
         console.log({ data });
         displayFavImg(data);
       });
+    // }
 
     function displayFavImg(data) {
       // for (let i = 0; i < data.length; i++) {
@@ -56,12 +58,9 @@ window.onload = async function getFavData() {
                         </div>`
         );
       }
-      // }
-      console.log({ favImages });
       document.querySelector(".myFavImages").innerHTML = favImages.join("");
 
       for (let j = 0; j < favImages.length; j++) {
-        console.log("hello", data.date);
         document
           .querySelector("#likeBtn" + [j])
           .addEventListener(`click`, (event) => {
@@ -84,4 +83,5 @@ window.onload = async function getFavData() {
       }
     }
   }
+  console.log({ favImages });
 };
