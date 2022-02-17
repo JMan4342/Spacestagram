@@ -50,7 +50,7 @@ window.onload = async function getFavData() {
         favImages.push(
           `<div id="imgDesc">
                         <h2>${data.title}</h2>
-                        <p>${data.date}</p>
+                        <p id="date` + [i] + `">${data.date}</p>
                         <img src="${data.url}" alt="${data.explanation}"/>
                         <button type="button" class="btnClass" id="likeBtn` +
             [i] +
@@ -66,16 +66,16 @@ window.onload = async function getFavData() {
           .addEventListener(`click`, (event) => {
             if (document.querySelector("#likeBtn" + [j]).innerText === "Like") {
               document.querySelector("#likeBtn" + [j]).innerText = "Unlike";
-              if (!likeImgArr.includes(data[j].date))
-                likeImgArr.push(data[j].date);
+              if (!likeImgArr.includes(document.querySelector("#date" + [j]).innerText))
+                likeImgArr.push(document.querySelector("#date" + [j]).innerText);
               localStorage.setItem(
                 "likeImgArr",
                 JSON.stringify(likeImgArr.sort())
               );
             } else {
               document.querySelector("#likeBtn" + [j]).innerText = "Like";
-              if (likeImgArr.includes(data[j].date))
-                likeImgArr.splice(likeImgArr.indexOf(data[j].date), 1);
+              if (likeImgArr.includes(document.querySelector("#date" + [j]).innerText))
+                likeImgArr.splice(likeImgArr.indexOf(document.querySelector("#date" + [j]).innerText), 1);
               localStorage.setItem("likeImgArr", JSON.stringify(likeImgArr));
             }
           });
