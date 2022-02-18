@@ -37,7 +37,7 @@ window.onload = async function getFavData() {
       // for (let i = 0; i < data.length; i++) {
       if (data.media_type === "video") {
         favImages.push(
-          `<div id="imgDesc">
+          `<div id="imgDesc` + [i] + `">
                     <h2>${data.title}</h2>
                     <p>${data.date}</p>
                     <iframe width="420" height="345" src="${data.url}">Video Not Available</iframe>
@@ -48,7 +48,7 @@ window.onload = async function getFavData() {
         );
       } else {
         favImages.push(
-          `<div id="imgDesc">
+          `<div id="imgDesc` + [i] + `">
                         <h2>${data.title}</h2>
                         <p id="date` + [i] + `">${data.date}</p>
                         <img src="${data.url}" alt="${data.explanation}"/>
@@ -77,6 +77,8 @@ window.onload = async function getFavData() {
               if (likeImgArr.includes(document.querySelector("#date" + [j]).innerText))
                 likeImgArr.splice(likeImgArr.indexOf(document.querySelector("#date" + [j]).innerText), 1);
               localStorage.setItem("likeImgArr", JSON.stringify(likeImgArr));
+              (document.querySelector("#imgDesc" + [j])).remove();
+              alert("You unliked the image");
             }
           });
         console.log({ likeImgArr });
