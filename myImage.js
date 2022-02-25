@@ -37,10 +37,14 @@ window.onload = async function getFavData() {
       // for (let i = 0; i < data.length; i++) {
       if (data.media_type === "video") {
         favImages.push(
-          `<div id="imgDesc` + [i] + `">
+          `<div id="imgDesc` +
+            [i] +
+            `">
                     <h2>${data.title}</h2>
-                    <p>${data.date}</p>
-                    <iframe width="420" height="345" src="${data.url}">Video Not Available</iframe>
+                    <p id="date` +
+            [i] +
+            `">${data.date}</p>
+                            <iframe width="420" height="345" src="${data.url}">Video Not Available</iframe>
                     <button type="button" class="btnClass" id="likeBtn` +
             [i] +
             `"  >Unlike</button>
@@ -48,9 +52,13 @@ window.onload = async function getFavData() {
         );
       } else {
         favImages.push(
-          `<div id="imgDesc` + [i] + `">
+          `<div id="imgDesc` +
+            [i] +
+            `">
                         <h2>${data.title}</h2>
-                        <p id="date` + [i] + `">${data.date}</p>
+                        <p id="date` +
+            [i] +
+            `">${data.date}</p>
                         <img src="${data.url}" alt="${data.explanation}"/>
                         <button type="button" class="btnClass" id="likeBtn` +
             [i] +
@@ -66,18 +74,33 @@ window.onload = async function getFavData() {
           .addEventListener(`click`, (event) => {
             if (document.querySelector("#likeBtn" + [j]).innerText === "Like") {
               document.querySelector("#likeBtn" + [j]).innerText = "Unlike";
-              if (!likeImgArr.includes(document.querySelector("#date" + [j]).innerText))
-                likeImgArr.push(document.querySelector("#date" + [j]).innerText);
+              if (
+                !likeImgArr.includes(
+                  document.querySelector("#date" + [j]).innerText
+                )
+              )
+                likeImgArr.push(
+                  document.querySelector("#date" + [j]).innerText
+                );
               localStorage.setItem(
                 "likeImgArr",
                 JSON.stringify(likeImgArr.sort())
               );
             } else {
               document.querySelector("#likeBtn" + [j]).innerText = "Like";
-              if (likeImgArr.includes(document.querySelector("#date" + [j]).innerText))
-                likeImgArr.splice(likeImgArr.indexOf(document.querySelector("#date" + [j]).innerText), 1);
+              if (
+                likeImgArr.includes(
+                  document.querySelector("#date" + [j]).innerText
+                )
+              )
+                likeImgArr.splice(
+                  likeImgArr.indexOf(
+                    document.querySelector("#date" + [j]).innerText
+                  ),
+                  1
+                );
               localStorage.setItem("likeImgArr", JSON.stringify(likeImgArr));
-              (document.querySelector("#imgDesc" + [j])).remove();
+              document.querySelector("#imgDesc" + [j]).remove();
               alert("You unliked the image");
             }
           });
