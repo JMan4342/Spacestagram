@@ -43,6 +43,9 @@ function displayData(data) {
                 <button type="button" class="btnClass" id="likeBtn` +
             [i] +
             `"  >Unlike</button>
+            <a href="https://twitter.com/share?url=${data[i].url}">
+    Twitter
+</a>
                 </div>`
         );
       } else {
@@ -54,6 +57,9 @@ function displayData(data) {
                     <button type="button" class="btnClass" id="likeBtn` +
             [i] +
             `"  >Unlike</button>
+            <a href="https://twitter.com/share?url=${data[i].url}">
+    Twitter
+</a>
                     </div>`
         );
       }
@@ -67,6 +73,9 @@ function displayData(data) {
                 <button type="button" class="btnClass" id="likeBtn` +
             [i] +
             `"  >Like</button>
+            <a href="https://twitter.com/share?url=${data[i].url}">
+    Twitter
+</a>
                 </div>`
         );
       } else {
@@ -78,6 +87,9 @@ function displayData(data) {
                     <button type="button" class="btnClass" id="likeBtn` +
             [i] +
             `"  >Like</button>
+            <a href="https://twitter.com/share?url=${data[i].url}">
+    Twitter
+</a>
                     </div>`
         );
       }

@@ -48,6 +48,10 @@ window.onload = async function getFavData() {
                     <button type="button" class="btnClass" id="likeBtn` +
             [i] +
             `"  >Unlike</button>
+            <a href="https://twitter.com/share?url=${data.url}">
+            Twitter
+        </a>
+        
                     </div>`
         );
       } else {
@@ -63,6 +67,10 @@ window.onload = async function getFavData() {
                         <button type="button" class="btnClass" id="likeBtn` +
             [i] +
             `"  >Unlike</button>
+            <a href="https://twitter.com/share?url=${data.url}">
+            Twitter
+        </a>
+
                         </div>`
         );
       }
