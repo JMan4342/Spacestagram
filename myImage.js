@@ -48,7 +48,7 @@ window.onload = async function getFavData() {
                     <button type="button" class="btnClass" id="likeBtn` +
             [i] +
             `"  >Unlike</button>
-            <a href="https://twitter.com/share?url=${data.url}">
+            <a href="https://twitter.com/share?url=${data.url}" target="_blank">
             Twitter
         </a>
         
@@ -67,7 +67,7 @@ window.onload = async function getFavData() {
                         <button type="button" class="btnClass" id="likeBtn` +
             [i] +
             `"  >Unlike</button>
-            <a href="https://twitter.com/share?url=${data.url}">
+            <a href="https://twitter.com/share?url=${data.url}" target="_blank">
             Twitter
         </a>
 
