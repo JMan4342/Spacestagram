@@ -51,6 +51,11 @@ window.onload = async function getFavData() {
             <a href="https://twitter.com/share?url=${data.url}&text=Check out this image from NASA!" target="_blank">
             Twitter
         </a>
+        <a href="https://www.facebook.com/sharer.php?u=${data.url}
+" target="_blank">
+Facebook
+</a>
+
         
                     </div>`
         );
@@ -70,6 +75,11 @@ window.onload = async function getFavData() {
             <a href="https://twitter.com/share?url=${data.url}&text=Check out this image from NASA!" target="_blank">
             Twitter
         </a>
+        <a href="https://www.facebook.com/sharer.php?u=${data.url}
+        " target="_blank">
+        Facebook
+        </a>
+        
 
                         </div>`
         );

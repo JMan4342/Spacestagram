@@ -46,6 +46,11 @@ function displayData(data) {
             <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank">
     Twitter
 </a>
+<a href="https://www.facebook.com/sharer.php?u=${data[i].url}
+" target="_blank">
+Facebook
+</a>
+
                 </div>`
         );
       } else {
@@ -60,6 +65,11 @@ function displayData(data) {
             <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank">
     Twitter
 </a>
+<a href="https://www.facebook.com/sharer.php?u=${data[i].url}
+" target="_blank">
+Facebook
+</a>
+
                     </div>`
         );
       }
@@ -76,6 +86,11 @@ function displayData(data) {
             <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank">
     Twitter
 </a>
+<a href="https://www.facebook.com/sharer.php?u=${data[i].url}
+" target="_blank">
+Facebook
+</a>
+
                 </div>`
         );
       } else {
@@ -90,6 +105,11 @@ function displayData(data) {
             <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank">
     Twitter
 </a>
+<a href="https://www.facebook.com/sharer.php?u=${data[i].url}
+" target="_blank">
+Facebook
+</a>
+
                     </div>`
         );
       }
