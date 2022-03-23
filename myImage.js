@@ -37,51 +37,25 @@ window.onload = async function getFavData() {
       // for (let i = 0; i < data.length; i++) {
       if (data.media_type === "video") {
         favImages.push(
-          `<div id="imgDesc` +
-            [i] +
-            `">
-                    <h2>${data.title}</h2>
-                    <p id="date` +
-            [i] +
-            `">${data.date}</p>
-                            <iframe width="420" height="345" src="${data.url}">Video Not Available</iframe>
-                    <button type="button" class="btnClass" id="likeBtn` +
-            [i] +
-            `"  >Unlike</button>
-            <a href="https://twitter.com/share?url=${data.url}&text=Check out this image from NASA!" target="_blank">
-            Twitter
-        </a>
-        <a href="https://www.facebook.com/sharer.php?u=${data.url}
-" target="_blank">
-Facebook
-</a>
-
-        
-                    </div>`
+          `<div id="imgDesc` + [i] + `">
+            <h2>${data.title}</h2>
+            <p id="date` + [i] + `">${data.date}</p>
+            <iframe width="420" height="345" src="${data.url}">Video Not Available</iframe>
+            <button type="button" class="btnClass" id="likeBtn` + [i] + `">Unlike</button>
+            <a href="https://twitter.com/share?url=${data.url}&text=Check out this image from NASA!" target="_blank">Twitter</a>
+            <a href="https://www.facebook.com/sharer.php?u=${data.url}" target="_blank">Facebook</a>
+          </div>`
         );
       } else {
         favImages.push(
-          `<div id="imgDesc` +
-            [i] +
-            `">
-                        <h2>${data.title}</h2>
-                        <p id="date` +
-            [i] +
-            `">${data.date}</p>
-                        <img src="${data.url}" alt="${data.explanation}"/>
-                        <button type="button" class="btnClass" id="likeBtn` +
-            [i] +
-            `"  >Unlike</button>
-            <a href="https://twitter.com/share?url=${data.url}&text=Check out this image from NASA!" target="_blank">
-            Twitter
-        </a>
-        <a href="https://www.facebook.com/sharer.php?u=${data.url}
-        " target="_blank">
-        Facebook
-        </a>
-        
-
-                        </div>`
+          `<div id="imgDesc` + [i] + `">
+            <h2>${data.title}</h2>
+            <p id="date` + [i] + `">${data.date}</p>
+            <img src="${data.url}" alt="${data.explanation}"/>
+            <button type="button" class="btnClass" id="likeBtn` + [i] + `"  >Unlike</button>
+            <a href="https://twitter.com/share?url=${data.url}&text=Check out this image from NASA!" target="_blank">Twitter</a>
+            <a href="https://www.facebook.com/sharer.php?u=${data.url}" target="_blank">Facebook</a>
+          </div>`
         );
       }
       document.querySelector(".myFavImages").innerHTML = favImages.join("");
