@@ -37,80 +37,48 @@ function displayData(data) {
       if (data[i].media_type === "video") {
         allImage.push(
           `<div id="imgDesc">
-                <h2>${data[i].title}</h2>
-                <p>${data[i].date}</p>
-                <iframe width="420" height="345" src="${data[i].url}">Video Not Available</iframe>
-                <button type="button" class="btnClass" id="likeBtn` +
-            [i] +
-            `"  >Unlike</button>
-            <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank">
-    Twitter
-</a>
-<a href="https://www.facebook.com/sharer.php?u=${data[i].url}
-" target="_blank">
-Facebook
-</a>
-
-                </div>`
+            <h2>${data[i].title}</h2>
+            <p>${data[i].date}</p>
+            <iframe width="420" height="345" src="${data[i].url}">Video Not Available</iframe>
+            <button type="button" class="btnClass" id="likeBtn` + [i] + `">Unlike</button>
+            <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank">Twitter</a>
+            <a href="https://www.facebook.com/sharer.php?u=${data[i].url}" target="_blank">Facebook</a>
+          </div>`
         );
       } else {
         allImage.push(
           `<div id="imgDesc">
-                    <h2>${data[i].title}</h2>
-                    <p>${data[i].date}</p>
-                    <img src="${data[i].url}" alt="${data[i].explanation}"/>
-                    <button type="button" class="btnClass" id="likeBtn` +
-            [i] +
-            `"  >Unlike</button>
-            <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank">
-    Twitter
-</a>
-<a href="https://www.facebook.com/sharer.php?u=${data[i].url}
-" target="_blank">
-Facebook
-</a>
-
-                    </div>`
+            <h2>${data[i].title}</h2>
+            <p>${data[i].date}</p>
+            <img src="${data[i].url}" alt="${data[i].explanation}"/>
+            <button type="button" class="btnClass" id="likeBtn` + [i] + `">Unlike</button>
+            <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank">Twitter</a>
+            <a href="https://www.facebook.com/sharer.php?u=${data[i].url}" target="_blank">Facebook</a>
+          </div>`
         );
       }
     } else {
       if (data[i].media_type === "video") {
         allImage.push(
           `<div id="imgDesc">
-                <h2>${data[i].title}</h2>
-                <p>${data[i].date}</p>
-                <iframe width="420" height="345" src="${data[i].url}">Video Not Available</iframe>
-                <button type="button" class="btnClass" id="likeBtn` +
-            [i] +
-            `"  >Like</button>
-            <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank">
-    Twitter
-</a>
-<a href="https://www.facebook.com/sharer.php?u=${data[i].url}
-" target="_blank">
-Facebook
-</a>
-
-                </div>`
+            <h2>${data[i].title}</h2>
+            <p>${data[i].date}</p>
+            <iframe width="420" height="345" src="${data[i].url}">Video Not Available</iframe>
+            <button type="button" class="btnClass" id="likeBtn` + [i] + `">Like</button>
+            <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank">Twitter</a>
+            <a href="https://www.facebook.com/sharer.php?u=${data[i].url}" target="_blank">Facebook</a>
+          </div>`
         );
       } else {
         allImage.push(
           `<div id="imgDesc">
-                    <h2>${data[i].title}</h2>
-                    <p>${data[i].date}</p>
-                    <img src="${data[i].url}" alt="${data[i].explanation}"/>
-                    <button type="button" class="btnClass" id="likeBtn` +
-            [i] +
-            `"  >Like</button>
-            <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank">
-    Twitter
-</a>
-<a href="https://www.facebook.com/sharer.php?u=${data[i].url}
-" target="_blank">
-Facebook
-</a>
-
-                    </div>`
+            <h2>${data[i].title}</h2>
+            <p>${data[i].date}</p>
+            <img src="${data[i].url}" alt="${data[i].explanation}"/>
+            <button type="button" class="btnClass" id="likeBtn` + [i] + `">Like</button>
+            <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank">Twitter</a>
+            <a href="https://www.facebook.com/sharer.php?u=${data[i].url}" target="_blank">Facebook</a>
+          </div>`
         );
       }
     }
