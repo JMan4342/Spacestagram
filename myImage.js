@@ -119,7 +119,6 @@ Facebook
                 );
               localStorage.setItem("likeImgArr", JSON.stringify(likeImgArr));
               document.querySelector("#imgDesc" + [j]).remove();
-              alert("You unliked the image");
             }
           });
         console.log({ likeImgArr });
