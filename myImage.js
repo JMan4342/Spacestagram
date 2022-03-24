@@ -42,8 +42,8 @@ window.onload = async function getFavData() {
             <p id="date` + [i] + `">${data.date}</p>
             <iframe width="420" height="345" src="${data.url}">Video Not Available</iframe>
             <button type="button" class="btnClass" id="likeBtn` + [i] + `">Unlike</button>
-            <a href="https://twitter.com/share?url=${data.url}&text=Check out this image from NASA!" target="_blank">Twitter</a>
-            <a href="https://www.facebook.com/sharer.php?u=${data.url}" target="_blank">Facebook</a>
+            <a href="https://twitter.com/share?url=${data.url}&text=Check out this image from NASA!" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.facebook.com/sharer.php?u=${data.url}" target="_blank"><i class="fab fa-facebook"></i></a>
           </div>`
         );
       } else {
@@ -53,8 +53,8 @@ window.onload = async function getFavData() {
             <p id="date` + [i] + `">${data.date}</p>
             <img src="${data.url}" alt="${data.explanation}"/>
             <button type="button" class="btnClass" id="likeBtn` + [i] + `"  >Unlike</button>
-            <a href="https://twitter.com/share?url=${data.url}&text=Check out this image from NASA!" target="_blank">Twitter</a>
-            <a href="https://www.facebook.com/sharer.php?u=${data.url}" target="_blank">Facebook</a>
+            <a href="https://twitter.com/share?url=${data.url}&text=Check out this image from NASA!" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.facebook.com/sharer.php?u=${data.url}" target="_blank"><i class="fab fa-facebook"></i></a>
           </div>`
         );
       }

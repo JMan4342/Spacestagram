@@ -41,8 +41,8 @@ function displayData(data) {
             <p>${data[i].date}</p>
             <iframe width="420" height="345" src="${data[i].url}">Video Not Available</iframe>
             <button type="button" class="btnClass" id="likeBtn` + [i] + `">Unlike</button>
-            <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank">Twitter</a>
-            <a href="https://www.facebook.com/sharer.php?u=${data[i].url}" target="_blank">Facebook</a>
+            <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.facebook.com/sharer.php?u=${data[i].url}" target="_blank"><i class="fab fa-facebook"></i></a>
           </div>`
         );
       } else {
@@ -52,8 +52,8 @@ function displayData(data) {
             <p>${data[i].date}</p>
             <img src="${data[i].url}" alt="${data[i].explanation}"/>
             <button type="button" class="btnClass" id="likeBtn` + [i] + `">Unlike</button>
-            <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank">Twitter</a>
-            <a href="https://www.facebook.com/sharer.php?u=${data[i].url}" target="_blank">Facebook</a>
+            <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.facebook.com/sharer.php?u=${data[i].url}" target="_blank"><i class="fab fa-facebook"></i></a>
           </div>`
         );
       }
@@ -65,8 +65,8 @@ function displayData(data) {
             <p>${data[i].date}</p>
             <iframe width="420" height="345" src="${data[i].url}">Video Not Available</iframe>
             <button type="button" class="btnClass" id="likeBtn` + [i] + `">Like</button>
-            <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank">Twitter</a>
-            <a href="https://www.facebook.com/sharer.php?u=${data[i].url}" target="_blank">Facebook</a>
+            <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.facebook.com/sharer.php?u=${data[i].url}" target="_blank"><i class="fab fa-facebook"></i></a>
           </div>`
         );
       } else {
@@ -76,8 +76,8 @@ function displayData(data) {
             <p>${data[i].date}</p>
             <img src="${data[i].url}" alt="${data[i].explanation}"/>
             <button type="button" class="btnClass" id="likeBtn` + [i] + `">Like</button>
-            <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank">Twitter</a>
-            <a href="https://www.facebook.com/sharer.php?u=${data[i].url}" target="_blank">Facebook</a>
+            <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.facebook.com/sharer.php?u=${data[i].url}" target="_blank"><i class="fab fa-facebook"></i></a>
           </div>`
         );
       }
