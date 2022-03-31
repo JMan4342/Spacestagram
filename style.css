@@ -1,2 +1,8 @@
 body {
   background-color: navy; }
+
+.likeBtnClass {
+  background-color: teal; }
+
+.unlikeBtnClass {
+  background-color: red; }

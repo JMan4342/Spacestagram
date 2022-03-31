@@ -41,7 +41,7 @@ window.onload = async function getFavData() {
             <h2>${data.title}</h2>
             <p id="date` + [i] + `">${data.date}</p>
             <iframe width="420" height="345" src="${data.url}">Video Not Available</iframe>
-            <button type="button" class="btnClass" id="likeBtn` + [i] + `">Unlike</button>
+            <button type="button" class="unlikeBtnClass" id="likeBtn` + [i] + `">Unlike</button>
             <a href="https://twitter.com/share?url=${data.url}&text=Check out this image from NASA!" target="_blank"><i class="fab fa-twitter"></i></a>
             <a href="https://www.facebook.com/sharer.php?u=${data.url}" target="_blank"><i class="fab fa-facebook"></i></a>
           </div>`
@@ -52,7 +52,7 @@ window.onload = async function getFavData() {
             <h2>${data.title}</h2>
             <p id="date` + [i] + `">${data.date}</p>
             <img src="${data.url}" alt="${data.explanation}"/>
-            <button type="button" class="btnClass" id="likeBtn` + [i] + `"  >Unlike</button>
+            <button type="button" class="unlikeBtnClass" id="likeBtn` + [i] + `"  >Unlike</button>
             <a href="https://twitter.com/share?url=${data.url}&text=Check out this image from NASA!" target="_blank"><i class="fab fa-twitter"></i></a>
             <a href="https://www.facebook.com/sharer.php?u=${data.url}" target="_blank"><i class="fab fa-facebook"></i></a>
           </div>`

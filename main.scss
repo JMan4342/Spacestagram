@@ -1,5 +1,15 @@
 $primarycolor: navy;
+$likeBtnColor: teal;
+$unlikeBtnColor: red;
 
 body {
     background-color: $primarycolor
+}
+
+.likeBtnClass {
+    background-color: $likeBtnColor;
+}
+
+.unlikeBtnClass {
+    background-color: $unlikeBtnColor;
 }
