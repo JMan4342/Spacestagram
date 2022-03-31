@@ -1,5 +1,11 @@
 {
+  "scripts": {
+    "compile:sass": "node-sass main.scss style.css -w"
+  },
   "dependencies": {
     "dotenv": "^14.2.0"
+  },
+  "devDependencies": {
+    "node-sass": "^7.0.1"
   }
 }
