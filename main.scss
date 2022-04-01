@@ -2,13 +2,18 @@ $primarycolor: navy;
 $likeBtnColor: teal;
 $unlikeBtnColor: red;
 
-body {
-    background-color: $primarycolor
-}
-
 .likeBtnClass {
     background-color: $likeBtnColor;
 }
+
+.likeBtnClass:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f004";
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: middle;
+    font-weight: 900;
+  }
 
 .unlikeBtnClass {
     background-color: $unlikeBtnColor;

@@ -40,7 +40,9 @@ function displayData(data) {
             <h2>${data[i].title}</h2>
             <p>${data[i].date}</p>
             <iframe width="420" height="345" src="${data[i].url}">Video Not Available</iframe>
-            <button type="button" class="unlikeBtnClass" id="likeBtn` + [i] + `">Unlike</button>
+            <button type="button" class="unlikeBtnClass" id="likeBtn` +
+            [i] +
+            `">Unlike</button>
             <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank"><i class="fab fa-twitter"></i></a>
             <a href="https://www.facebook.com/sharer.php?u=${data[i].url}" target="_blank"><i class="fab fa-facebook"></i></a>
           </div>`
@@ -51,7 +53,9 @@ function displayData(data) {
             <h2>${data[i].title}</h2>
             <p>${data[i].date}</p>
             <img src="${data[i].url}" alt="${data[i].explanation}"/>
-            <button type="button" class="unlikeBtnClass" id="likeBtn` + [i] + `">Unlike</button>
+            <button type="button" class="unlikeBtnClass" id="likeBtn` +
+            [i] +
+            `">Unlike</button>
             <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank"><i class="fab fa-twitter"></i></a>
             <a href="https://www.facebook.com/sharer.php?u=${data[i].url}" target="_blank"><i class="fab fa-facebook"></i></a>
           </div>`
@@ -64,7 +68,9 @@ function displayData(data) {
             <h2>${data[i].title}</h2>
             <p>${data[i].date}</p>
             <iframe width="420" height="345" src="${data[i].url}">Video Not Available</iframe>
-            <button type="button" class="likeBtnClass" id="likeBtn` + [i] + `">Like</button>
+            <button type="button" class="likeBtnClass" id="likeBtn` +
+            [i] +
+            `">Like</button>
             <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank"><i class="fab fa-twitter"></i></a>
             <a href="https://www.facebook.com/sharer.php?u=${data[i].url}" target="_blank"><i class="fab fa-facebook"></i></a>
           </div>`
@@ -75,7 +81,9 @@ function displayData(data) {
             <h2>${data[i].title}</h2>
             <p>${data[i].date}</p>
             <img src="${data[i].url}" alt="${data[i].explanation}"/>
-            <button type="button" class="likeBtnClass" id="likeBtn` + [i] + `">Like</button>
+            <button type="button" class="likeBtnClass" id="likeBtn` +
+            [i] +
+            `">Like</button>
             <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank"><i class="fab fa-twitter"></i></a>
             <a href="https://www.facebook.com/sharer.php?u=${data[i].url}" target="_blank"><i class="fab fa-facebook"></i></a>
           </div>`
@@ -92,14 +100,23 @@ function displayData(data) {
       .addEventListener(`click`, (event) => {
         if (document.querySelector("#likeBtn" + [j]).innerText === "Like") {
           document.querySelector("#likeBtn" + [j]).innerText = "Unlike";
-          document.querySelector("#likeBtn" + [j]).classList.remove("likeBtnClass");
-          document.querySelector("#likeBtn" + [j]).classList.add("unlikeBtnClass");
+          document
+            .querySelector("#likeBtn" + [j])
+            .classList.remove("likeBtnClass");
+          document
+            .querySelector("#likeBtn" + [j])
+            .classList.add("unlikeBtnClass");
           if (!likeImgArr.includes(data[j].date)) likeImgArr.push(data[j].date);
           localStorage.setItem("likeImgArr", JSON.stringify(likeImgArr.sort()));
         } else {
           document.querySelector("#likeBtn" + [j]).innerText = "Like";
-          document.querySelector("#likeBtn" + [j]).classList.remove("unlikeBtnClass");
-          document.querySelector("#likeBtn" + [j]).classList.add("likeBtnClass");
+          // document.querySelector("#likeBtn" + [j]).innerHTML = `<i class="fas fa-heart">Like</i>`;
+          document
+            .querySelector("#likeBtn" + [j])
+            .classList.remove("unlikeBtnClass");
+          document
+            .querySelector("#likeBtn" + [j])
+            .classList.add("likeBtnClass");
           if (likeImgArr.includes(data[j].date))
             likeImgArr.splice(likeImgArr.indexOf(data[j].date), 1);
           localStorage.setItem("likeImgArr", JSON.stringify(likeImgArr));
