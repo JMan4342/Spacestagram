@@ -43,6 +43,9 @@ function displayData(data) {
             <button type="button" class="unlikeBtnClass" id="likeBtn` +
             [i] +
             `">Unlike</button>
+            <i class="fas fa-heart" id="heartIcon` +
+            [i] +
+            `"></i>
             <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank"><i class="fab fa-twitter"></i></a>
             <a href="https://www.facebook.com/sharer.php?u=${data[i].url}" target="_blank"><i class="fab fa-facebook"></i></a>
           </div>`
@@ -56,6 +59,9 @@ function displayData(data) {
             <button type="button" class="unlikeBtnClass" id="likeBtn` +
             [i] +
             `">Unlike</button>
+            <i class="fas fa-heart" id="heartIcon` +
+            [i] +
+            `"></i>
             <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank"><i class="fab fa-twitter"></i></a>
             <a href="https://www.facebook.com/sharer.php?u=${data[i].url}" target="_blank"><i class="fab fa-facebook"></i></a>
           </div>`
@@ -71,6 +77,9 @@ function displayData(data) {
             <button type="button" class="likeBtnClass" id="likeBtn` +
             [i] +
             `">Like</button>
+            <i class="fas fa-heart" id="heartIcon` +
+            [i] +
+            `"></i>
             <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank"><i class="fab fa-twitter"></i></a>
             <a href="https://www.facebook.com/sharer.php?u=${data[i].url}" target="_blank"><i class="fab fa-facebook"></i></a>
           </div>`
@@ -84,6 +93,9 @@ function displayData(data) {
             <button type="button" class="likeBtnClass" id="likeBtn` +
             [i] +
             `">Like</button>
+            <i class="fas fa-heart" id="heartIcon` +
+            [i] +
+            `"></i>
             <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank"><i class="fab fa-twitter"></i></a>
             <a href="https://www.facebook.com/sharer.php?u=${data[i].url}" target="_blank"><i class="fab fa-facebook"></i></a>
           </div>`
@@ -106,6 +118,10 @@ function displayData(data) {
           document
             .querySelector("#likeBtn" + [j])
             .classList.add("unlikeBtnClass");
+          document
+            .querySelector("#heartIcon" + [j])
+            .classList.remove("unlikeHeart");
+          document.querySelector("#heartIcon" + [j]).classList.add("likeHeart");
           if (!likeImgArr.includes(data[j].date)) likeImgArr.push(data[j].date);
           localStorage.setItem("likeImgArr", JSON.stringify(likeImgArr.sort()));
         } else {
@@ -117,6 +133,12 @@ function displayData(data) {
           document
             .querySelector("#likeBtn" + [j])
             .classList.add("likeBtnClass");
+          document
+            .querySelector("#heartIcon" + [j])
+            .classList.remove("likeHeart");
+          document
+            .querySelector("#heartIcon" + [j])
+            .classList.add("unlikeHeart");
           if (likeImgArr.includes(data[j].date))
             likeImgArr.splice(likeImgArr.indexOf(data[j].date), 1);
           localStorage.setItem("likeImgArr", JSON.stringify(likeImgArr));
