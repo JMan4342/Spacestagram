@@ -3,7 +3,7 @@ $likeBtnColor: teal;
 $unlikeBtnColor: red;
 
 .likeBtnClass {
-    background-color: $likeBtnColor;
+  background-color: $likeBtnColor;
 }
 
 // .likeBtnClass:before {
@@ -16,15 +16,39 @@ $unlikeBtnColor: red;
 //   }
 
 .unlikeBtnClass {
-    background-color: $unlikeBtnColor;
+  background-color: $unlikeBtnColor;
 }
 
 .unlikeHeart {
-    top: 0px;
-    position: relative;
+  position: relative;
+  animation-name: unlike;
+  animation-duration: 1s;
 }
 
 .likeHeart {
-    top: 10px;
-    position: relative;
+  position: relative;
+  animation-name: like;
+  animation-duration: 1s;
+}
+
+@keyframes like {
+  from {
+    display: block;
+    top: 0px;
+  }
+  to {
+    top: -35px;
+    display: none;
+  }
+}
+
+@keyframes unlike {
+  from {
+    display: block;
+    top: -35px;
+  }
+  to {
+    top: 0px;
+    display: none;
+  }
 }
