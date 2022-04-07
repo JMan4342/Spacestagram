@@ -19,6 +19,11 @@ $unlikeBtnColor: red;
   background-color: $unlikeBtnColor;
 }
 
+.iconHeart {
+  color: rgba(253, 253, 253, 0);
+//   left: -32px;
+}
+
 .unlikeHeart {
   position: relative;
   animation-name: unlike;
@@ -35,10 +40,14 @@ $unlikeBtnColor: red;
   from {
     display: block;
     top: 0px;
+    left: -32px;
+    color: rgba(253, 253, 253, 0);
   }
   to {
     top: -35px;
+    left: -32px;
     display: none;
+    color: rgba(254, 0, 0, 1);
   }
 }
 
@@ -46,9 +55,13 @@ $unlikeBtnColor: red;
   from {
     display: block;
     top: -35px;
+    left: -32px;
+    color: rgba(254, 0, 0, 1);
   }
   to {
     top: 0px;
+    left: -32px;
     display: none;
+    color: rgba(253, 253, 253, 0);
   }
 }

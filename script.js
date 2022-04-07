@@ -43,7 +43,7 @@ function displayData(data) {
             <button type="button" class="unlikeBtnClass" id="likeBtn` +
             [i] +
             `">Unlike</button>
-            <i class="fas fa-heart" id="heartIcon` +
+            <i class="fas fa-heart iconHeart" id="heartIcon` +
             [i] +
             `"></i>
             <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank"><i class="fab fa-twitter"></i></a>
@@ -59,7 +59,7 @@ function displayData(data) {
             <button type="button" class="unlikeBtnClass" id="likeBtn` +
             [i] +
             `">Unlike</button>
-            <i class="fas fa-heart" id="heartIcon` +
+            <i class="fas fa-heart iconHeart" id="heartIcon` +
             [i] +
             `"></i>
             <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank"><i class="fab fa-twitter"></i></a>
@@ -77,7 +77,7 @@ function displayData(data) {
             <button type="button" class="likeBtnClass" id="likeBtn` +
             [i] +
             `">Like</button>
-            <i class="fas fa-heart" id="heartIcon` +
+            <i class="fas fa-heart iconHeart" id="heartIcon` +
             [i] +
             `"></i>
             <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank"><i class="fab fa-twitter"></i></a>
@@ -93,7 +93,7 @@ function displayData(data) {
             <button type="button" class="likeBtnClass" id="likeBtn` +
             [i] +
             `">Like</button>
-            <i class="fas fa-heart" id="heartIcon` +
+            <i class="fas fa-heart iconHeart" id="heartIcon` +
             [i] +
             `"></i>
             <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank"><i class="fab fa-twitter"></i></a>
