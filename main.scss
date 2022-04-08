@@ -2,6 +2,31 @@ $primarycolor: navy;
 $likeBtnColor: teal;
 $unlikeBtnColor: red;
 
+.imgContainer {
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+}
+
+.allImages {
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+}
+
+.imgCard {
+    height: 700px;
+    width: auto;
+    border: solid;
+    border-radius: 25px;
+    margin: 5px;
+}
+
+.img {
+    height: 50%;
+    width: auto;
+}
+
 .likeContainer {
   display: flex;
   flex-direction: column;
@@ -12,15 +37,6 @@ $unlikeBtnColor: red;
   background-color: $likeBtnColor;
   width: 150px;
 }
-
-// .likeBtnClass:before {
-//     font-family: "Font Awesome 5 Free";
-//     content: "\f004";
-//     display: inline-block;
-//     padding-right: 3px;
-//     vertical-align: middle;
-//     font-weight: 900;
-//   }
 
 .unlikeBtnClass {
   background-color: $unlikeBtnColor;

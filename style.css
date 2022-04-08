@@ -1,3 +1,24 @@
+.imgContainer {
+  display: flex;
+  flex-direction: column;
+  height: 80%; }
+
+.allImages {
+  display: flex;
+  flex-direction: row;
+  overflow: auto; }
+
+.imgCard {
+  height: 700px;
+  width: auto;
+  border: solid;
+  border-radius: 25px;
+  margin: 5px; }
+
+.img {
+  height: 50%;
+  width: auto; }
+
 .likeContainer {
   display: flex;
   flex-direction: column;

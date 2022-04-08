@@ -36,10 +36,10 @@ function displayData(data) {
     if (likeImgArr.includes(data[i].date)) {
       if (data[i].media_type === "video") {
         allImage.push(
-          `<div id="imgDesc">
+          `<div class="imgCard">
             <h2>${data[i].title}</h2>
             <p>${data[i].date}</p>
-            <iframe width="420" height="345" src="${data[i].url}">Video Not Available</iframe>
+            <iframe width="420" height="345" src="${data[i].url}" class="img">Video Not Available</iframe>
             <div class="likeContainer">
               <button type="button" class="unlikeBtnClass" id="likeBtn` +
               [i] +
@@ -54,10 +54,10 @@ function displayData(data) {
         );
       } else {
         allImage.push(
-          `<div id="imgDesc">
+          `<div class="imgCard">
             <h2>${data[i].title}</h2>
             <p>${data[i].date}</p>
-            <img src="${data[i].url}" alt="${data[i].explanation}"/>
+            <img src="${data[i].url}" alt="${data[i].explanation}" class="img"/>
             <div class="likeContainer">
               <button type="button" class="unlikeBtnClass" id="likeBtn` +
               [i] +
@@ -74,10 +74,10 @@ function displayData(data) {
     } else {
       if (data[i].media_type === "video") {
         allImage.push(
-          `<div id="imgDesc">
+          `<div class="imgCard">
             <h2>${data[i].title}</h2>
             <p>${data[i].date}</p>
-            <iframe width="420" height="345" src="${data[i].url}">Video Not Available</iframe>
+            <iframe width="420" height="345" src="${data[i].url}" class="img">Video Not Available</iframe>
             <div class="likeContainer">
               <button type="button" class="likeBtnClass" id="likeBtn` +
               [i] +
@@ -92,10 +92,10 @@ function displayData(data) {
         );
       } else {
         allImage.push(
-          `<div id="imgDesc">
+          `<div class="imgCard">
             <h2>${data[i].title}</h2>
             <p>${data[i].date}</p>
-            <img src="${data[i].url}" alt="${data[i].explanation}"/>
+            <img src="${data[i].url}" alt="${data[i].explanation}" class="img"/>
             <div class="likeContainer">
               <button type="button" class="likeBtnClass" id="likeBtn` +
               [i] +
