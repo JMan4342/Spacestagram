@@ -40,12 +40,14 @@ function displayData(data) {
             <h2>${data[i].title}</h2>
             <p>${data[i].date}</p>
             <iframe width="420" height="345" src="${data[i].url}">Video Not Available</iframe>
-            <button type="button" class="unlikeBtnClass" id="likeBtn` +
-            [i] +
-            `">Unlike</button>
-            <i class="fas fa-heart iconHeart" id="heartIcon` +
-            [i] +
-            `"></i>
+            <div class="likeContainer">
+              <button type="button" class="unlikeBtnClass" id="likeBtn` +
+              [i] +
+              `">Unlike</button>
+              <i class="fas fa-heart iconHeart" id="heartIcon` +
+              [i] +
+              `"></i>
+            </div>
             <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank"><i class="fab fa-twitter"></i></a>
             <a href="https://www.facebook.com/sharer.php?u=${data[i].url}" target="_blank"><i class="fab fa-facebook"></i></a>
           </div>`
@@ -56,12 +58,14 @@ function displayData(data) {
             <h2>${data[i].title}</h2>
             <p>${data[i].date}</p>
             <img src="${data[i].url}" alt="${data[i].explanation}"/>
-            <button type="button" class="unlikeBtnClass" id="likeBtn` +
-            [i] +
-            `">Unlike</button>
-            <i class="fas fa-heart iconHeart" id="heartIcon` +
-            [i] +
-            `"></i>
+            <div class="likeContainer">
+              <button type="button" class="unlikeBtnClass" id="likeBtn` +
+              [i] +
+              `">Unlike</button>
+              <i class="fas fa-heart iconHeart" id="heartIcon` +
+              [i] +
+              `"></i>
+            </div>
             <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank"><i class="fab fa-twitter"></i></a>
             <a href="https://www.facebook.com/sharer.php?u=${data[i].url}" target="_blank"><i class="fab fa-facebook"></i></a>
           </div>`
@@ -74,12 +78,14 @@ function displayData(data) {
             <h2>${data[i].title}</h2>
             <p>${data[i].date}</p>
             <iframe width="420" height="345" src="${data[i].url}">Video Not Available</iframe>
-            <button type="button" class="likeBtnClass" id="likeBtn` +
-            [i] +
-            `">Like</button>
-            <i class="fas fa-heart iconHeart" id="heartIcon` +
-            [i] +
-            `"></i>
+            <div class="likeContainer">
+              <button type="button" class="likeBtnClass" id="likeBtn` +
+              [i] +
+              `">Like</button>
+              <i class="fas fa-heart iconHeart" id="heartIcon` +
+              [i] +
+              `"></i>
+            </div>
             <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank"><i class="fab fa-twitter"></i></a>
             <a href="https://www.facebook.com/sharer.php?u=${data[i].url}" target="_blank"><i class="fab fa-facebook"></i></a>
           </div>`
@@ -90,12 +96,14 @@ function displayData(data) {
             <h2>${data[i].title}</h2>
             <p>${data[i].date}</p>
             <img src="${data[i].url}" alt="${data[i].explanation}"/>
-            <button type="button" class="likeBtnClass" id="likeBtn` +
-            [i] +
-            `">Like</button>
-            <i class="fas fa-heart iconHeart" id="heartIcon` +
-            [i] +
-            `"></i>
+            <div class="likeContainer">
+              <button type="button" class="likeBtnClass" id="likeBtn` +
+              [i] +
+              `">Like</button>
+              <i class="fas fa-heart iconHeart" id="heartIcon` +
+              [i] +
+              `"></i>
+            </div>
             <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank"><i class="fab fa-twitter"></i></a>
             <a href="https://www.facebook.com/sharer.php?u=${data[i].url}" target="_blank"><i class="fab fa-facebook"></i></a>
           </div>`
