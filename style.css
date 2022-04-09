@@ -9,11 +9,21 @@
   overflow: auto; }
 
 .imgCard {
-  height: 700px;
+  height: 400px;
   width: auto;
   border: solid;
   border-radius: 25px;
-  margin: 5px; }
+  margin: 5px;
+  animation-name: cardShrink;
+  animation-duration: 1s;
+  z-index: 0; }
+
+.imgCard:hover {
+  animation-name: cardGrow;
+  animation-duration: 1s;
+  height: 600px;
+  width: auto;
+  z-index: 1; }
 
 .img {
   height: 50%;
@@ -47,6 +57,26 @@
   display: none;
   animation-name: like;
   animation-duration: 1s; }
+
+@keyframes cardGrow {
+  from {
+    height: 400px;
+    width: auto;
+    z-index: 0; }
+  to {
+    height: 600px;
+    width: auto;
+    z-index: 1; } }
+
+@keyframes cardShrink {
+  from {
+    height: 600px;
+    width: auto;
+    z-index: 1; }
+  to {
+    height: 400px;
+    width: auto;
+    z-index: 0; } }
 
 @keyframes like {
   from {

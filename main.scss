@@ -3,28 +3,39 @@ $likeBtnColor: teal;
 $unlikeBtnColor: red;
 
 .imgContainer {
-    display: flex;
-    flex-direction: column;
-    height: 80%;
+  display: flex;
+  flex-direction: column;
+  height: 80%;
 }
 
 .allImages {
-    display: flex;
-    flex-direction: row;
-    overflow: auto;
+  display: flex;
+  flex-direction: row;
+  overflow: auto;
 }
 
 .imgCard {
-    height: 700px;
-    width: auto;
-    border: solid;
-    border-radius: 25px;
-    margin: 5px;
+  height: 400px;
+  width: auto;
+  border: solid;
+  border-radius: 25px;
+  margin: 5px;
+  animation-name: cardShrink;
+  animation-duration: 1s;
+  z-index: 0;
+}
+
+.imgCard:hover {
+  animation-name: cardGrow;
+  animation-duration: 1s;
+  height: 600px;
+  width: auto;
+  z-index: 1;
 }
 
 .img {
-    height: 50%;
-    width: auto;
+  height: 50%;
+  width: auto;
 }
 
 .likeContainer {
@@ -47,7 +58,7 @@ $unlikeBtnColor: red;
   color: rgba(253, 253, 253, 0);
   display: none;
   //   position: relative;
-//   top: -18px;
+  //   top: -18px;
 }
 
 .unlikeHeart {
@@ -64,6 +75,32 @@ $unlikeBtnColor: red;
   //   top: -18px;
   animation-name: like;
   animation-duration: 1s;
+}
+
+@keyframes cardGrow {
+  from {
+    height: 400px;
+    width: auto;
+    z-index: 0;
+  }
+  to {
+    height: 600px;
+    width: auto;
+    z-index: 1;
+  }
+}
+
+@keyframes cardShrink {
+  from {
+    height: 600px;
+    width: auto;
+    z-index: 1;
+  }
+  to {
+    height: 400px;
+    width: auto;
+    z-index: 0;
+  }
 }
 
 @keyframes like {
