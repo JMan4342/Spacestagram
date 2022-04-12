@@ -1,16 +1,18 @@
 .imgContainer {
-  display: flex;
-  flex-direction: column;
+  display: inline-block;
   height: 80%; }
 
 .allImages {
-  display: flex;
-  flex-direction: row;
-  overflow: auto; }
+  display: inline-block; }
+
+.cardContainer {
+  display: inline-block;
+  position: relative; }
 
 .imgCard {
+  position: absolute;
   height: 400px;
-  width: auto;
+  width: 400px;
   border: solid;
   border-radius: 25px;
   margin: 5px;
@@ -21,8 +23,9 @@
 .imgCard:hover {
   animation-name: cardGrow;
   animation-duration: 1s;
+  position: absolute;
   height: 600px;
-  width: auto;
+  width: 600px;
   z-index: 1; }
 
 .img {
@@ -60,22 +63,26 @@
 
 @keyframes cardGrow {
   from {
+    position: absolute;
     height: 400px;
-    width: auto;
+    width: 400px;
     z-index: 0; }
   to {
     height: 600px;
-    width: auto;
+    width: 600px;
+    position: absolute;
     z-index: 1; } }
 
 @keyframes cardShrink {
   from {
     height: 600px;
-    width: auto;
+    width: 600px;
+    position: absolute;
     z-index: 1; }
   to {
+    position: absolute;
     height: 400px;
-    width: auto;
+    width: 400px;
     z-index: 0; } }
 
 @keyframes like {

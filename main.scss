@@ -3,20 +3,28 @@ $likeBtnColor: teal;
 $unlikeBtnColor: red;
 
 .imgContainer {
-  display: flex;
-  flex-direction: column;
+  display: inline-block;
+  // flex-direction: column;
   height: 80%;
 }
 
 .allImages {
-  display: flex;
-  flex-direction: row;
-  overflow: auto;
+  display: inline-block;
+  // position: relative;
+  // overflow: auto;
+}
+
+.cardContainer {
+  display: inline-block;
+  position: relative;
 }
 
 .imgCard {
+  position: absolute;
+  // flex-direction: column;
+  // align-items: center;
   height: 400px;
-  width: auto;
+  width: 400px;
   border: solid;
   border-radius: 25px;
   margin: 5px;
@@ -28,8 +36,13 @@ $unlikeBtnColor: red;
 .imgCard:hover {
   animation-name: cardGrow;
   animation-duration: 1s;
+  position: absolute;
+  // top: 0;
+  // bottom: 0;
+  // right: 0;
+  // left: 0;
   height: 600px;
-  width: auto;
+  width: 600px;
   z-index: 1;
 }
 
@@ -79,13 +92,19 @@ $unlikeBtnColor: red;
 
 @keyframes cardGrow {
   from {
+    position: absolute;
     height: 400px;
-    width: auto;
+    width: 400px;
     z-index: 0;
   }
   to {
     height: 600px;
-    width: auto;
+    width: 600px;
+    position: absolute;
+    // top: 0;
+    // bottom: 0;
+    // right: 0;
+    // left: 0;  
     z-index: 1;
   }
 }
@@ -93,12 +112,18 @@ $unlikeBtnColor: red;
 @keyframes cardShrink {
   from {
     height: 600px;
-    width: auto;
+    width: 600px;
+    position: absolute;
+    // top: 0;
+    // bottom: 0;
+    // right: 0;
+    // left: 0;  
     z-index: 1;
   }
   to {
+    position: absolute;
     height: 400px;
-    width: auto;
+    width: 400px;
     z-index: 0;
   }
 }
