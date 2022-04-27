@@ -37,41 +37,51 @@ function displayData(data) {
       if (data[i].media_type === "video") {
         allImage.push(
           `<div class="cardContainer">
-          <div class="imgCard">
-            <h2>${data[i].title}</h2>
-            <p>${data[i].date}</p>
-            <iframe width="420" height="345" src="${data[i].url}" class="img">Video Not Available</iframe>
-            <div class="likeContainer">
-              <button type="button" class="unlikeBtnClass" id="likeBtn` +
-            [i] +
-            `">Unlike</button>
-              <i class="fas fa-heart iconHeart" id="heartIcon` +
-            [i] +
-            `"></i>
+            <div class="imgCard">
+              <h2>${data[i].title}</h2>
+              <p>${data[i].date}</p>
+              <div class="likeContainer">
+                <button type="button" class="unlikeBtnClass" id="likeBtn` +
+                [i] +
+                `">Unlike</button>
+                <i class="fas fa-heart iconHeart" id="heartIcon` +
+                [i] +
+                `"></i>
+              </div>
+              <div class="socialBtn">
+                <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.facebook.com/sharer.php?u=${data[i].url}" target="_blank"><i class="fab fa-facebook"></i></a>
+              </div>
+              <div class="imgDisplay">
+                <iframe width="420" height="345" src="${data[i].url}" class="img">Video Not Available</iframe>
+                <iframe width="420" height="345" src="${data[i].url}" class="imgReflection">Video Not Available</iframe>
+              </div>
             </div>
-            <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.facebook.com/sharer.php?u=${data[i].url}" target="_blank"><i class="fab fa-facebook"></i></a>
-          </div>
           </div>`
         );
       } else {
         allImage.push(
           `<div class="cardContainer">
-          <div class="imgCard">
-            <h2>${data[i].title}</h2>
-            <p>${data[i].date}</p>
-            <img src="${data[i].url}" alt="${data[i].explanation}" class="img"/>
-            <div class="likeContainer">
-              <button type="button" class="unlikeBtnClass" id="likeBtn` +
-            [i] +
-            `">Unlike</button>
-              <i class="fas fa-heart iconHeart" id="heartIcon` +
-            [i] +
-            `"></i>
+            <div class="imgCard">
+              <h2>${data[i].title}</h2>
+              <p>${data[i].date}</p>
+              <div class="likeContainer">
+                <button type="button" class="unlikeBtnClass" id="likeBtn` +
+                [i] +
+                `">Unlike</button>
+                <i class="fas fa-heart iconHeart" id="heartIcon` +
+                [i] +
+                `"></i>
+              </div>
+              <div class="socialBtn">
+                <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.facebook.com/sharer.php?u=${data[i].url}" target="_blank"><i class="fab fa-facebook"></i></a>
+              </div>
+              <div class="imgDisplay">
+                <img src="${data[i].url}" alt="${data[i].explanation}" class="img"/>
+                <img src="${data[i].url}" alt="${data[i].explanation}" class="imgReflection"/>
+              </div>
             </div>
-            <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.facebook.com/sharer.php?u=${data[i].url}" target="_blank"><i class="fab fa-facebook"></i></a>
-          </div>
           </div>`
         );
       }
@@ -79,42 +89,52 @@ function displayData(data) {
       if (data[i].media_type === "video") {
         allImage.push(
           `<div class="cardContainer">
-          <div class="imgCard">
-            <h2>${data[i].title}</h2>
-            <p>${data[i].date}</p>
-            <iframe width="420" height="345" src="${data[i].url}" class="img">Video Not Available</iframe>
-            <div class="likeContainer">
-              <button type="button" class="likeBtnClass" id="likeBtn` +
-            [i] +
-            `">Like</button>
-              <i class="fas fa-heart iconHeart" id="heartIcon` +
-            [i] +
-            `"></i>
+            <div class="imgCard">
+              <h2>${data[i].title}</h2>
+              <p>${data[i].date}</p>
+              <div class="likeContainer">
+                <button type="button" class="likeBtnClass" id="likeBtn` +
+                [i] +
+                `">Like</button>
+                <i class="fas fa-heart iconHeart" id="heartIcon` +
+                [i] +
+                `"></i>
+              </div>
+              <div class="socialBtn">
+                <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.facebook.com/sharer.php?u=${data[i].url}" target="_blank"><i class="fab fa-facebook"></i></a>
+              </div>
+              <div class="imgDisplay">
+                <iframe width="420" height="345" src="${data[i].url}" class="img">Video Not Available</iframe>
+                <iframe width="420" height="345" src="${data[i].url}" class="imgReflection">Video Not Available</iframe>
+              </div>
             </div>
-            <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.facebook.com/sharer.php?u=${data[i].url}" target="_blank"><i class="fab fa-facebook"></i></a>
-          </div>
           </div>`
         );
       } else {
         allImage.push(
           `<div class="cardContainer">
-          <div class="imgCard">
-            <h2>${data[i].title}</h2>
-            <p>${data[i].date}</p>
-            <img src="${data[i].url}" alt="${data[i].explanation}" class="img"/>
-            <div class="likeContainer">
-              <button type="button" class="likeBtnClass" id="likeBtn` +
-            [i] +
-            `">Like</button>
-              <i class="fas fa-heart iconHeart" id="heartIcon` +
-            [i] +
-            `"></i>
+            <div class="imgCard">
+              <h2>${data[i].title}</h2>
+              <p>${data[i].date}</p>
+              <div class="likeContainer">
+                <button type="button" class="likeBtnClass" id="likeBtn` +
+                [i] +
+                `">Like</button>
+                <i class="fas fa-heart iconHeart" id="heartIcon` +
+                [i] +
+                `"></i>
+              </div>
+              <div class="socialBtn">
+                <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.facebook.com/sharer.php?u=${data[i].url}" target="_blank"><i class="fab fa-facebook"></i></a>
+              </div>
+              <div class="imgDisplay">
+                <img src="${data[i].url}" alt="${data[i].explanation}" class="img"/>
+                <img src="${data[i].url}" alt="${data[i].explanation}" class="imgReflection"/>
+              </div>
             </div>
-            <a href="https://twitter.com/share?url=${data[i].url}&text=Check out this image from NASA!" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.facebook.com/sharer.php?u=${data[i].url}" target="_blank"><i class="fab fa-facebook"></i></a>
-            </div>
-            </div>`
+          </div>`
         );
       }
     }
