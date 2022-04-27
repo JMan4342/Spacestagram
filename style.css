@@ -36,7 +36,8 @@
 
 .imgReflection {
   width: 55%;
-  height: auto; }
+  height: auto;
+  transform: rotateX(180deg); }
 
 .likeContainer {
   display: flex;

@@ -65,6 +65,7 @@ $unlikeBtnColor: red;
 .imgReflection {
   width: 55%;
   height: auto;
+  transform: rotateX(180deg);
 }
 
 .likeContainer {
