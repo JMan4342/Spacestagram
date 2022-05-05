@@ -185,3 +185,4 @@ function displayData(data) {
 
   console.log({ allImage });
 }
+

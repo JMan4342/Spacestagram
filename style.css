@@ -25,9 +25,8 @@
 .imgDisplay {
   display: flex;
   flex-direction: column;
-  height: 85%;
+  height: 80%;
   width: auto;
-  justify-content: center;
   align-items: center; }
 
 .img {
@@ -36,8 +35,9 @@
 
 .imgReflection {
   width: 55%;
-  height: auto;
-  transform: rotateX(180deg); }
+  height: 20%;
+  transform: rotateX(180deg);
+  margin-top: 1px; }
 
 .likeContainer {
   display: flex;
